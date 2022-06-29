@@ -6,14 +6,17 @@ include_once './Conn.php';
 //require './Crud.php';
 
 if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
-    $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
-    header("Location: login.php");
+    if ($_SESSION['nivel-acesso'] > 2) {
+        $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
+        header("Location: login.php");
 
     //Mostra a mensagen e depois destroi a mesma
     if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
         }
+    }
+    
 }
 ?>
 
@@ -250,6 +253,8 @@ if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
                             <label for="nivel-acesso" class="col-form-label">Nivel Acesso:</label>
                             <input type="number" name="nivel-acesso" class="form-control" id="editnivel-acesso" placeholder="">
                         </div> -->
+                        <input type="hidden" name="id-end" id="editidend">
+
                         <div class="mb-3">
                             <label for="cep" class="col-form-label">Cep:</label>
                             <input type="text" name="cep" class="form-control" id="editcep" placeholder="00000-00">

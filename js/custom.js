@@ -61,6 +61,8 @@ listarCatProdutos(1);
 
 // Modal Vagas
 
+const listLivresModal = new bootstrap.Modal(document.getElementById("listLivresModal"));
+
 async function listarLivres(pagina){
     // console.log("Página: " + pagina + ". Id da categoria: " + id_cat);
     const dadosLivres = await fetch('./listar-vagas-livres.php?pagina=' + pagina);
@@ -72,11 +74,10 @@ async function listarLivres(pagina){
         document.getElementById("msgAlerta").innerHTML = respostaLivres['msg'];
     } else {        
         //document.getElementById("msgAlerta").innerHTML = respostaProd['msg'];
-
-        const listLivresModal = new bootstrap.Modal(document.getElementById("listLivresModal"));
         listLivresModal.show();
         // console.log(pagina);
         document.querySelector(".list-vg-livres").innerHTML = respostaLivres['dados'];
+        
     }
 }
 
@@ -88,6 +89,7 @@ async function listarLivresPag(pagina){
         document.getElementById("msgErroListLivres").innerHTML = respostaLivres['msg'];
     } else {        
         document.querySelector(".list-vg-livres").innerHTML = respostaLivres['dados'];
+        
     }
 }
 
@@ -111,6 +113,7 @@ async function selectVaga(n_vaga){
 
 const addVagaForm = document.getElementById("addVeiculo-form");
 const addVagaMsgErro = document.getElementById("msgErroListLivres");
+const addModal = new bootstrap.Modal(document.getElementById("addVagaModal"));
 
 addVagaForm.addEventListener("submit", async (e) => {
     e.preventDefault();    
@@ -133,6 +136,8 @@ addVagaForm.addEventListener("submit", async (e) => {
         addVagaMsgErro.innerHTML = respostaForm['msg'];
     } else {
         addVagaMsgErro.innerHTML = respostaForm['msg'];
+        addVagaForm.reset();
+        addModal.hide();
         listarCatProdutos(1);
     }
 

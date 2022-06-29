@@ -6,8 +6,8 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 if (!empty($id)) {
 
     $query_usuario = "SELECT usr.id, usr.nome, usr.cpf, usr.celular, usr.email, usr.brapa, usr.plano_id, usr.niveis_acesso_id,                        
-    edrc.id, edrc.cep, edrc.rua, edrc.numero, edrc.complemento, edrc.bairro, edrc.cidade, edrc.usuario_id,                       
-    vcl.id, vcl.modelo, vcl.marca, vcl.placa, vcl.usuario_id    
+    edrc.id_end, edrc.cep, edrc.rua, edrc.numero, edrc.complemento, edrc.bairro, edrc.cidade, edrc.usuario_id,                       
+    vcl.id_vei, vcl.modelo, vcl.marca, vcl.placa, vcl.usuario_id    
     FROM usuarios AS usr    
     INNER JOIN enderecos AS edrc ON edrc.usuario_id=usr.id    
     INNER JOIN veiculos AS vcl ON vcl.usuario_id=usr.id    

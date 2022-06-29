@@ -10,7 +10,7 @@ if (!empty($id)) {
     $result_usuario->bindParam(':id', $id);
 
     if($result_usuario->execute()){
-        $retorna = ['erro' => false, 'msg' => "<div class='alert alert-success' role='alert'>Usuário apagado com sucesso!</div>"];
+        $retorna = ['error' => false, 'msg' => "<div class='alert alert-success' role='alert'>Usuário apagado com sucesso!</div>"];
     }else{
         $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Usuário não apagado com sucesso!</div>"];
     }    

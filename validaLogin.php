@@ -11,9 +11,6 @@ if (strlen($db['brapa']) <= 5){
     $_SESSION['msg'] =  "<p style='color: #f00;'>Senha deve ter no minimo 6 números</p>";
     //echo "<pre>"; print_r($db); die;
     header("Location: login.php");
-} elseif (strlen($db['brapa']) >= 9){
-    $_SESSION['msg'] =  "<p style='color: #f00;'>Senha deve ter no maximo 8 números</p>";
-    header("Location: login.php");
 } else {
     if (!empty($db['db_login'])){   
         $query_usuarios = "SELECT id, nome, email, brapa, niveis_acesso_id FROM usuarios WHERE email=:email LIMIT 1";
@@ -34,8 +31,10 @@ if (strlen($db['brapa']) <= 5){
                 if ($_SESSION['nivel-acesso'] == 3){
                     header("Location: vagas.php");
                 } else if ($_SESSION['nivel-acesso'] == 4){
-                    header("Location: dashboard.php");
-                } else if ($_SESSION['nivel-acesso'] == 1){
+                    header("Location: formulario.php");
+                } else if ($_SESSION['nivel-acesso'] == 2){
+                    header("Location: vagas.php");
+                }else if ($_SESSION['nivel-acesso'] == 1){
                     header("Location: vagas.php");
                 }
             } else {

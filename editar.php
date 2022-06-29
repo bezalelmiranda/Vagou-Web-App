@@ -17,7 +17,9 @@ if (empty($dados['id'])) {
     $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo e-mail!</div>"];
 } elseif (empty($dados['brapa'])) {
     $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo senha!</div>"];
-}  elseif (empty($dados['rua'])) {
+}  elseif (empty($dados['id-end'])) {
+    $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Tente mais tarde!</div>"];
+} elseif (empty($dados['rua'])) {
     $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo rua!</div>"];
 } elseif (empty($dados['numero'])) {
     $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Necessário preencher o campo numero!</div>"];
@@ -47,7 +49,7 @@ if (empty($dados['id'])) {
     $edit_usuario->execute();
 
     $query_endereco = "UPDATE enderecos SET cep=:cep, rua=:rua, numero=:numero, complemento=:complemento, bairro=:bairro, cidade=:cidade
-                        WHERE usuario_id=:id";
+                        WHERE id_end=:id";
     $edit_endereco = $conn->prepare($query_endereco);
     $edit_endereco->bindParam(':cep', $dados['cep']);
     $edit_endereco->bindParam(':rua', $dados['rua']);
@@ -58,7 +60,7 @@ if (empty($dados['id'])) {
     $edit_endereco->bindParam(':id', $dados['id']);
     $edit_endereco->execute();
 
-    $query_veiculo = "UPDATE veiculos SET modelo=:modelo, marca=:marca, placa=:placa WHERE usuario_id=:id";
+    $query_veiculo = "UPDATE veiculos SET modelo=:modelo, marca=:marca, placa=:placa WHERE id_vei=:id";
     $edit_veiculo = $conn->prepare($query_veiculo);
     $edit_veiculo->bindParam(':modelo', $dados['modelo']);
     $edit_veiculo->bindParam(':marca', $dados['marca']);

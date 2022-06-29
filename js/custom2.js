@@ -147,6 +147,7 @@ async function editUsuarioDados(id) {
         document.getElementById("editbrapa").value = resposta['dados'].brapa;
         // document.getElementById("editplano").value = resposta['dados'].plano_id;
         // document.getElementById("editnivel-acesso").value = resposta['dados'].niveis_acesso_id;
+        document.getElementById("editidend").value = resposta['dados'].id_end;
         document.getElementById("editcep").value = resposta['dados'].cep;
         document.getElementById("editrua").value = resposta['dados'].rua;
         document.getElementById("editnumero").value = resposta['dados'].numero;
@@ -191,6 +192,7 @@ editForm.addEventListener("submit", async (e) => {
 });
 
 async function apagarUsuarioDados(id) {
+    console.log("acessou" + id);
 
     var confirmar = confirm("Tem certeza que deseja excluir o registro selecionado?");
 
