@@ -36,7 +36,7 @@ if (strlen($db['brapa']) <= 5){
                 } else if ($_SESSION['nivel-acesso'] == 4){
                     header("Location: dashboard.php");
                 } else if ($_SESSION['nivel-acesso'] == 1){
-                    header("Location: dashboardAdmin.php");
+                    header("Location: vagas.php");
                 }
             } else {
                 $_SESSION['msg'] =  "<p style='color: #f00;'>Usuário não encontrado!</p>";

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
+/*a*/
 *{
     margin: 0;
     padding: 0;
@@ -22,6 +22,7 @@
 body{
     background-color: var(--main-color);
     color: var(--site-color);
+    line-height: 1.5;
 }
 
 .max-width{
@@ -400,7 +401,7 @@ footer span a:hover {
     margin: 10px 0;
 }
 
-/* .contact .contact-content .row {
+.contact .contact-content .row {
     display: flex;
     height: 65px;
     align-items: center;
@@ -413,7 +414,7 @@ footer span a:hover {
 .contact .contact-content .row i {
     font-size: 25px;
     color: var(--active-color);
-} */
+}
 
 .contact .contact-content .info .head {
     font-weight: 500;
@@ -512,30 +513,42 @@ footer span a:hover {
 
 .content { 
     display: flex;
+}
+
+.content .wrapper {
+    width: 100%;
+    padding: 10px;
     background-color: var(--site-color);
 }
 
-.container-fluid {
-    background-color: var(--site-color);
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 50px;
-}
-
-.title-modal-vg-livres {
+.content .row {
+    background-color: #0407142e;
+    border-radius: 10px;
+    margin: 100px;
     color: var(--first-color);
 }
 
-.top-list {
+.wrapper .row {
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 5px;
+    flex-wrap: wrap;
+    /* float: left; */
+    padding: 10px 16px;
+}
+
+.row .top-list {
     width: 100%;
     overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #1b202a;
 }
 
 .top-list .title-content {
     float: left;
     color: var(--first-color);
     padding: 10px 16px;
-    font-size: 17px;
+    font-size: 24px;
 }
 
 .top-list .top-list-right {
@@ -544,6 +557,25 @@ footer span a:hover {
     float: right;
 }
 
+.top-list .top-list-right a {
+    margin: 0 5px 0 10px;
+}
+
+.card {
+    margin: 0 3px 0 3px;
+}
+
+.card-title{
+    margin: 0;
+}
+
+/* Modal Add Vagas */
+
+#btn-addvaga {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
 
 /* Fim Modal Add Vagas */
 
@@ -551,10 +583,10 @@ footer span a:hover {
 
 .content .sidebar {
     color: var(--site-color);
-    height: 100vh;
+    height: calc(100vh - 60px);
     width: 60px;
     position: sticky;
-    margin-top: 0;
+    margin-top: 80px;
     box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.12);
     background-color: var(--active-color);
     /* barra de rolagem */
@@ -623,16 +655,6 @@ footer span a:hover {
     font-size: 22px;
     flex-shrink: 0;
 }
-
-.sidebar-nav .btn-link {
-    /* display: flex;
-    align-items: initial;
-    justify-content: left; */
-    padding: 0;
-    text-decoration: none;
-    color: var(--site-color);
-}
-
 /* FIM SIDEBAR */
 
 /* Rodapé */
@@ -760,16 +782,15 @@ ul {
         width: 100%;
     }
 }
-
 /* Inicio Listar Adm */
 .listar-adm{
     background-color: var(--site-color);
 }
 
-/* .row .top-list {
+.row .top-list {
     width: 100%;
-    overflow: hidden;
-} */
+    
+}
 
 .top-list .title-content{
     float: left;
@@ -801,7 +822,7 @@ ul {
     padding: 8px;
 }
 
-/* inicio paginação Adm */
+/* inicio paginação Adm 
 .content-pagination {
     margin: 15px 0;
     width: 100%;
@@ -811,7 +832,7 @@ ul {
 }
 
 .pagination {
-    /* display: inline-block; */
+    display: inline-block;
     font-size: 15px;
 }
 
@@ -833,7 +854,7 @@ ul {
 }
 /* Fim paginação Adm */
 
-/* inicio pornalizar botao */
+/* inicio personalizar botao 
 .btn-primary {
     background-color: var(--active-color);
     color: var(--site-color);
@@ -913,7 +934,7 @@ ul {
     background-color: var(--site-color);
     color: var(--danger-color);
 }
-/* fim pornalizar botao */
+/* fim pornalizar botao 
 
 @media (max-width: 640px){
     .table-sm-none{

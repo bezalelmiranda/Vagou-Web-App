@@ -21,12 +21,17 @@ $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 if (!empty($pagina)) {
 
     //Calcular o inicio visualização
-    $qnt_result_pg = 3; //Quantidade de registro por página
+    $qnt_result_pg = 7; //Quantidade de registro por página
     $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
 
-    $query_usuarios = "SELECT id, nome, celular, cpf, email FROM usuarios ORDER BY id DESC LIMIT $inicio, $qnt_result_pg";
-    $result_usuarios = $conn->prepare($query_usuarios);
-    $result_usuarios->execute();
+    $query_usuario = "SELECT usr.id, usr.nome, usr.celular, usr.cpf, usr.email, usr.created, nvl.nivel, pl.plano
+                       FROM usuarios AS usr 
+                       INNER JOIN niveis_acesso AS nvl ON nvl.id=usr.niveis_acesso_id
+                       INNER JOIN planos AS pl ON pl.id=usr.plano_id
+                       ORDER BY id DESC LIMIT $inicio, $qnt_result_pg";
+    $result_usuario = $conn->prepare($query_usuario);
+    $result_usuario->execute();
+   //var_dump($result_usuario);
 
     $dados = "<div class='table-responsive'>
             <table class='table table-dark table-striped'>
@@ -34,14 +39,16 @@ if (!empty($pagina)) {
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
                         <th>Celular</th>
                         <th>CPF</th>
+                        <th>E-mail</th>
+                        <th>Plano</th>
+                        <th>Nivel de Acesso</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>";
-    while ($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)) {
+    while ($row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC)) {
         extract($row_usuario);
         $dados .= "<tr>
                     <td>$id</td>
@@ -49,6 +56,8 @@ if (!empty($pagina)) {
                     <td>$celular</td>
                     <td>$cpf</td>
                     <td>$email</td>
+                    <td>$plano</td>
+                    <td>$nivel</td>
                     <td>
                         <button id='$id' class='btn btn-outline-primary btn-sm' onclick='visUsuario($id)'>Visualizar</button>
 

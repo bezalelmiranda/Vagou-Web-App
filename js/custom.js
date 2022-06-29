@@ -5,7 +5,6 @@
 //     document.querySelector('#menu-icon').classList.toggle("active");
 // });
 
-
 //valoda a força da senha
 function senhaForca(){
     var senha = document.getElementById('exampleInputPassword1').value;
@@ -139,7 +138,3 @@ addVagaForm.addEventListener("submit", async (e) => {
 
     document.getElementById("add-veiculo-btn").value = "Adicionar";
 });
-
-        
-        
-
