@@ -15,8 +15,7 @@
     <nav class="nav">
         <div class="max-width">
             <div class="logo">
-                <img src="image/Logo carro.png" alt="BRA parking">
-                <a href="index.php">BRA parking</a>
+             <a href="index.php"><img src="image/vagou.png" alt="vagou-logo"></a>
             </div>
             <ul class="menu" id="menu-site">
                 <li><a href="index.php">Home</a></li>

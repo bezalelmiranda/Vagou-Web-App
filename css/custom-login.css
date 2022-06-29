@@ -39,7 +39,7 @@ body{
 }
 
 .navbar .logo img {
-    width: 30px;    
+    width: 120px;    
     object-fit: cover;
     margin-right: 10px;
 }
@@ -264,3 +264,8 @@ footer span a:hover {
     color: var(--site-color);
 }
 /* Fim do rodapé */
+
+/* #img-login {
+    width: 40px;
+    height: 20px;
+} */

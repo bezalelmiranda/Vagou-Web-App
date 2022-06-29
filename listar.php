@@ -72,7 +72,7 @@ if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
         <a href="sair.php" class="sidebar-nav"><i class="icon fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
     </div>
     
-    <div class="container">
+    <div class="container-fluid">
         <!-- <div class="row mt-4">
             <div class="col-lg-12 d-flex justify-content-between align-items-center">
                 <div>

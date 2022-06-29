@@ -24,6 +24,14 @@ body{
     color: var(--site-color);
 }
 
+h1{
+    color: #0063e5;
+}
+
+.row>* {
+    background-color: white;
+}
+
 .max-width{
     max-width: 1300px;
     padding: 0 10px;
@@ -41,7 +49,7 @@ body{
 }
 
 .nav .logo img {
-    width: 30px;    
+    width: 120px;    
     object-fit: cover;
     margin-right: 10px;
 }
@@ -287,6 +295,7 @@ footer span a:hover {
 }
 
 .about .title {
+    margin-top: 8vh;
     text-align: center;
     margin-bottom: 50px;
     font-weight: 400;
@@ -921,4 +930,9 @@ ul {
     }
 }
 
+#embreve{
+    width: 800px;
+    height: 400px;
+
+}
 /* Fim Listar Adm */

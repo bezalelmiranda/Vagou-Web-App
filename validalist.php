@@ -34,7 +34,7 @@ if (!empty($pagina)) {
    //var_dump($result_usuario);
 
     $dados = "<div class='table-responsive'>
-            <table class='table table-dark table-striped'>
+            <table class='table table-striped'>
                 <thead>
                     <tr>
                         <th>ID</th>

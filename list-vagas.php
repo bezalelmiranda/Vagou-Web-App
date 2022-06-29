@@ -32,6 +32,7 @@ if (!empty($pagina)) {
                                 <th>VAGAS</th>
                                 <th>HORA ENTRADA</th>
                                 <th>HORA SAÍDA</th>
+                                <th>COBRANÇA</th>
                             </tr>
                         </thead>
                         <tbody>";
@@ -42,6 +43,7 @@ if (!empty($pagina)) {
                             <td>$n_vaga</td>
                             <td>$hora_entrada</td>
                             <td>$hora_saida</td>
+                            <td><button type='button' class='btn btn-success'>Finalizar</button></td>
                         </tr>";
         }
 

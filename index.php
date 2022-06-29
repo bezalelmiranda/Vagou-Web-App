@@ -14,8 +14,7 @@
     <nav class="nav">
         <div class="max-width">
             <div class="logo">
-                <img src="image/Logo carro.png" alt="BRA parking">
-                <a href="index.php">BRA parking</a>
+                <a href="index.php"><img src="image/vagou.png" alt="vagou-logo"></a>
             </div>
             <ul class="menu" id="menu-site">
                 <li><a href="index.php">Home</a></li>
@@ -32,10 +31,10 @@
     <section class="top">
         <div class="max-width">
             <div class="top-content">
-                <div class="text-1">Temos para você.</div>
-                <div class="text-2">A solução de que precisa.</div>
-                <div class="text-3">Podemos ajudar você!</div>
-                <a href="contato.php">Entre em Contato</a>
+                <div class="text-1">Sem estresse na hora de estacionar seu carro</div>
+                <div class="text-2">Vagou é o app que facilita a sua vida</div>
+                <div class="text-3">Dê uma paradinha e venha conferir!</div>
+                <a href="contato.php">Conferir</a>
 
 
             </div>
