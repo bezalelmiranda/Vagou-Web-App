@@ -1,0 +1,33 @@
+body {
+    color: white;
+    background-color: #040714;
+}
+.container{
+    margin-top: 10px;
+    color: white;
+    background-color: #040714;
+}
+.navbar {
+    color: #0063e5;    
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #040714;
+    border-bottom: solid #1b202a 1px;
+}
+.collapse ul li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 25px;
+}
+.listar {
+    color: white;
+    background-color: #040714;
+}
+#a{
+    height: 10px;
+    width: 10px;
+}

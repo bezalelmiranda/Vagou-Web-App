@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root{
+    --main-color: #040714;
+    --site-color: #fff;
+    --active-color: #0063e5;
+    --first-color: #08132f;
+    --second-color: #090b13;
+    --third-color: #1b202a;
+}
+
+body{
+    background-color: var(--main-color);
+    color: var(--site-color);
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--main-color);
+    border-bottom: solid var(--third-color) 1px;
+}
+
+.navbar .logo img {
+    width: 30px;    
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.navbar .logo a{
+    color: var(--active-color);
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a{
+    display: block;
+    color: var(--site-color);
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 25px;
+}
+
+.menu-btn{
+    color: var(--site-color);
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    #menu-icon.active::before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        background-color: var(--main-color);
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    #menu-site.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+
+    }
+
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 13px 0;
+        font-size: 25px;
+    }
+}
+
+section{
+    padding: 50px 0;
+
+}
+
+@media (max-width: 690px){
+    section {
+        padding: 20px 0;
+
+    }
+}
+
+.top{
+    color: var(--site-color);
+    display: flex;
+    /*background: url("../image/estacionamento.jpg") no-repeat center;*/
+    background: linear-gradient(to right, var(--main-color) 25%, rgba(255, 255, 255, 0)), url("../image/estacionamento3.jpg") no-repeat center;
+    height: 90vh;
+    background-size: cover;
+    background-attachment: fixed; /*para que a imagem não seja movida*/
+    font-family: 'Ubunto', sans-serif;
+}
+
+/* Fim servico */
+
+/* Inicio login */
+.d-flex{
+    display: flex;
+    align-items: center; /* Alinhar acima e abaixo */
+    justify-content: center; /* Alinhar a esquerda e a direita */
+    height: 90vh; /* Altura total */
+}
+
+.container-login{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 5px;
+
+}
+
+.wrapper-login{
+    width: 100%;
+    background-color: var(--first-color);
+    border-radius: 10px;    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.wrapper-login .title{
+    height: 90px;
+    background-color: var(--main-color);
+    border-radius: 5px 5px 0 0;
+    color: var(--site-color);
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper-login .form-login{
+    padding: 25px; /* Espaçamento interno, comece o conteúdo á partir */
+
+}
+
+.wrapper-login .form-login .row{
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wrapper-login .form-login .row input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid var(--site-color);
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.form-login .row input::placeholder{
+    color: var(--first-color);    
+}
+
+.wrapper-login .form-login .row i{
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: var(--site-color);
+    font-size: 18px;
+    background-color: var(--active-color);
+    border: 1px solid var(--site-color);
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper-login .form-login .button input{
+    color: var(--site-color);
+    font-size: 20px;
+    padding-left: 0px;
+    background-color: var(--active-color);
+    border: 1px solid var(--site-color);
+    cursor: pointer; /* Cursor padrão */
+}
+
+.form-login .button input:hover{
+    background-color: var(--site-color);
+    color: var(--active-color);
+}
+
+.wrapper-login .form-login .signup-link a{
+    color: var(--site-color);
+    text-decoration: none; /* Não deixa o texto como link */
+}
+
+.form-login .signup-link a:hover{
+    color: var(--active-color);
+}
+
+.title .logo1 {
+    width: 30px;    
+    object-fit: cover;
+    margin-right: -60px;
+    color: var(--active-color);
+    font-size: 35px;
+    font-weight: 500;
+    position: fixed;
+    width: 20%; 
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Inicío rodapé */
+footer {
+    background: var(--second-color);
+    padding: 25px 23px;
+    color: var(--site-color);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer span a {
+    color: var(--active-color);    
+}
+
+footer span a:hover {
+    color: var(--site-color);
+}
+/* Fim do rodapé */
